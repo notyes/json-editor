@@ -10,7 +10,34 @@
             "name": {
                 "type": "string"
             },
-
+            "style": {
+              "type": "string",
+              "title": "Style",
+              "enum": [
+                "column",
+                "row"
+              ],
+              "default": "column"
+            },
+            "layout": {
+              "type": "string",
+              "title": "Layout",
+              "enum": [
+                "left",
+                "right"
+              ],
+              "default": "left"
+            },
+            "type": {
+              "type": "string",
+              "title": "Type",
+              "enum": [
+                "radio",
+                "checkbox",
+                "select"
+              ],
+              "default": "radio"
+            },
             "subs": {
                 "type": "array",
                 "format": "table",

@@ -8,9 +8,13 @@
     <link rel='stylesheet' href='//cdn.jsdelivr.net/foundation/5.0.2/css/foundation.min.css'>
     <!-- Font Awesome icons (Bootstrap, Foundation, and jQueryUI also supported) -->
     <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css'>
-    
+    <script src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
     <script src="../dist/jsoneditor.js"></script>
-    
+    <style type="text/css" media="screen">
+        table {
+          width: 100%;
+        }
+    </style>    
     <script>
     // Set the default CSS theme and icon library globally
     JSONEditor.defaults.theme = 'foundation5';
@@ -41,6 +45,9 @@
       var starting_value = [
         {
           "name": "",
+          "style": "column",
+          "layout": "left",
+          "type": "radio",
           "subs": [
             {
               "name": ""
@@ -68,8 +75,14 @@
       document.getElementById('submit').addEventListener('click',function() {
         // Get the value from the editor
         console.log(editor.getValue());
+
+        $.post('/update.php', {param: JSON.stringify(editor.getValue())}, function() {
+          
+        });
+
+
       });
-      
+
       // Hook up the Restore to Default button
       document.getElementById('restore').addEventListener('click',function() {
         editor.setValue(starting_value);
