@@ -1,0 +1,32 @@
+{
+    "type": "array",
+    "format": "table",
+    "title": "Topic",
+    "uniqueItems": true,
+    "items": {
+        "type": "object",
+        "title": "Topic",
+        "properties": {
+            "name": {
+                "type": "string"
+            },
+
+            "subs": {
+                "type": "array",
+                "format": "table",
+                "title": "Subs",
+                "uniqueItems": true,
+                "items": {
+                    "type": "object",
+                    "title": "Sub",
+                    "properties": {
+                        "name": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}
