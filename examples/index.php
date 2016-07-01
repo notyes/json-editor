@@ -1,4 +1,3 @@
-
 <?php  
 
 $file_save = __DIR__.'/../text.json';
@@ -8,9 +7,7 @@ $data = file_get_contents( $file_save ,FILE_USE_INCLUDE_PATH);
 if (empty( $data )) {
     $data = '[{"name": "","style": "column","layout": "left","type": "radio","subs": [{"name": ""}]}]';
 }
-
 ?>
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -21,7 +18,7 @@ if (empty( $data )) {
     <link rel='stylesheet' href='//cdn.jsdelivr.net/foundation/5.0.2/css/foundation.min.css'>
     <!-- Font Awesome icons (Bootstrap, Foundation, and jQueryUI also supported) -->
     <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css'>
-    <script src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
+    <script src="../dist/jquery-1.8.0.min.js"></script>
     <script src="../dist/jsoneditor.js"></script>
     <style type="text/css" media="screen">
         table {
