@@ -3,7 +3,7 @@
 
 $file_save = __DIR__.'/../text.json';
 
-$data = file_get_contents( $file_save ,ILE_USE_INCLUDE_PATH);
+$data = file_get_contents( $file_save ,FILE_USE_INCLUDE_PATH);
 
 if (empty( $data )) {
     $data = '[{"name": "","style": "column","layout": "left","type": "radio","subs": [{"name": ""}]}]';
