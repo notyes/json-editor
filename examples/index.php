@@ -36,7 +36,7 @@ if (empty( $data )) {
   <body>
     <div class='row'>
       <div class='medium-12 columns'>
-        <h1>JSON Editor Date</h1>
+        <h1>ระบบใส่ข้อมูลหัวข้อและรายการตัวเลือก ใน ระบบลงทะเบียน</h1>
       </div>
     </div>
     <div class='row'>
