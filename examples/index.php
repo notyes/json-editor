@@ -1,3 +1,16 @@
+
+<?php  
+
+$file_save = __DIR__.'/../text.json';
+
+$data = file_get_contents( $file_save ,ILE_USE_INCLUDE_PATH);
+
+if (empty( $data )) {
+    $data = '[{"name": "","style": "column","layout": "left","type": "radio","subs": [{"name": ""}]}]';
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -42,19 +55,7 @@
       // This is the starting value for the editor
       // We will use this to seed the initial editor 
       // and to provide a "Restore to Default" button.
-      var starting_value = [
-        {
-          "name": "",
-          "style": "column",
-          "layout": "left",
-          "type": "radio",
-          "subs": [
-            {
-              "name": ""
-            }
-          ]
-        }
-      ];
+      var starting_value = <?php echo $data ?>;
       
       // Initialize the editor
       var editor = new JSONEditor(document.getElementById('editor_holder'),{
