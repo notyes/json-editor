@@ -39,7 +39,7 @@ if (empty( $data )) {
     </div>
     <div class='row'>
       <div class='medium-12-columns'>
-        <button id='submit' class='tiny'>Submit (console.log)</button>
+        <button id='submit' class='tiny'>Submit (ส่งข้อมูล)</button>
         <button id='restore' class='secondary tiny'>Restore to Default</button>
         <span id='valid_indicator' class='label'></span>
       </div>
@@ -75,7 +75,7 @@ if (empty( $data )) {
         console.log(editor.getValue());
 
         $.post('/update.php', {param: JSON.stringify(editor.getValue())}, function() {
-          
+          alert('Success to save data');
         });
 
 
