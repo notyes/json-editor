@@ -1,5 +1,7 @@
 <?php  
 
+include __DIR__.'/../inc.php';
+
 $file_save = __DIR__.'/../text.json';
 
 $data = file_get_contents( $file_save ,FILE_USE_INCLUDE_PATH);
@@ -74,7 +76,7 @@ if (empty( $data )) {
         // Get the value from the editor
         console.log(editor.getValue());
 
-        $.post('/update.php', {param: JSON.stringify(editor.getValue())}, function() {
+        $.post('<?php echo ABSURL ?>update.php', {param: JSON.stringify(editor.getValue())}, function() {
           alert('Success to save data');
         });
 
