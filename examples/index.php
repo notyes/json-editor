@@ -1,8 +1,26 @@
 <?php  
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 include __DIR__.'/../inc.php';
 
-$file_save = __DIR__.'/../text.json';
+
+if ( empty( $_GET['type'] ) ) {
+    header('Location: '.ABSURL); 
+}else if( ! in_array( $_GET['type'] , array( 'food', 'fair' ) ) ){
+    header('Location: '.ABSURL); 
+}
+
+$file_save = __DIR__.'/../'.$_GET['type'].'.json';
+
+
+if (!file_exists($file_save)) {
+    $fh = fopen($file_save, 'a');
+    fwrite($fh, "");
+    fclose($fh);
+    chmod($file_save, 0777);
+}
 
 $data = file_get_contents( $file_save ,FILE_USE_INCLUDE_PATH);
 
@@ -36,7 +54,7 @@ if (empty( $data )) {
   <body>
     <div class='row'>
       <div class='medium-12 columns'>
-        <h1>ระบบใส่ข้อมูลหัวข้อและรายการตัวเลือก ใน ระบบลงทะเบียน</h1>
+        <h3>ระบบใส่ข้อมูลหัวข้อและรายการตัวเลือก ใน ระบบลงทะเบียน <?php echo $_GET['type'] ?></h3>
       </div>
     </div>
     <div class='row'>
@@ -76,7 +94,7 @@ if (empty( $data )) {
         // Get the value from the editor
         console.log(editor.getValue());
 
-        $.post('<?php echo ABSURL ?>update.php', {param: JSON.stringify(editor.getValue())}, function() {
+        $.post('<?php echo ABSURL ?>update.php?type=<?php echo $_GET['type'] ?>', {param: JSON.stringify(editor.getValue())}, function() {
           alert('Success to save data');
         });
 
