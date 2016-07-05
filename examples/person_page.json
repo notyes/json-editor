@@ -10,6 +10,15 @@
             "name": {
                 "type": "string"
             },
+            "name_th": {
+                "type": "string"
+            },
+            "name_en": {
+                "type": "string"
+            },
+            "code": {
+                "type": "string"
+            },
             "style": {
               "type": "string",
               "title": "Style",
@@ -47,7 +56,16 @@
                     "type": "object",
                     "title": "Sub",
                     "properties": {
+                        "code": {
+                            "type": "string"
+                        },
                         "name": {
+                            "type": "string"
+                        },
+                        "name_th": {
+                            "type": "string"
+                        },
+                        "name_en": {
                             "type": "string"
                         }
                     }
